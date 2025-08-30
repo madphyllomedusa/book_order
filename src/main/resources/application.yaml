@@ -20,7 +20,6 @@ spring:
     locations: classpath:db/migration
     baseline-on-migrate: true
 
-
 jwt:
   issuer: book_order
   expires-in: 10h
