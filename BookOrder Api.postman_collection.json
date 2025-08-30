@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "532a5940-3279-4deb-9a3e-2d4b4e690fe0",
+		"name": "BookOrder Api",
+		"description": "Коллекция для проверки API библиотеки",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37520314"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Война и мир\",\n  \"author\": \"Лев Толстой\",\n  \"isbn\": \"9785389064965\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book by UUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books/{{bookUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"{{bookUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Война и мир. Том 1\",\n  \"author\": \"Лев Толстой\",\n  \"isbn\": \"9785389064965\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/{{bookUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"{{bookUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books?page=0&size=5&sort=title,asc&title=война",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "title,asc"
+								},
+								{
+									"key": "title",
+									"value": "война"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lastName\": \"Иванов\",\n  \"firstName\": \"Иван\",\n  \"middleName\": \"Иванович\",\n  \"birthDate\": \"1990-05-01\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client by UUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/clients/{{clientUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								"{{clientUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lastName\": \"Петров\",\n  \"firstName\": \"Пётр\",\n  \"middleName\": \"Иванович\",\n  \"birthDate\": \"1991-03-15\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/{{clientUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								"{{clientUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/clients?page=0&size=5&sort=lastName,asc&lastName=Иванов",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "lastName,asc"
+								},
+								{
+									"key": "lastName",
+									"value": "Иванов"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Readings",
+			"item": [
+				{
+					"name": "Create Reading",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientUuid\": \"{{clientUuid}}\",\n  \"bookUuid\": \"{{bookUuid}}\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/readings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"readings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reading by UUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/readings/{{readingUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"readings",
+								"{{readingUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Readings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/readings?page=0&size=5&sort=takenAt,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"readings"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "takenAt,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Readings by Client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/readings/by-client/{{clientUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"readings",
+								"by-client",
+								"{{clientUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Readings by Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/readings/by-book/{{bookUuid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"readings",
+								"by-book",
+								"{{bookUuid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "bookUuid",
+			"value": ""
+		},
+		{
+			"key": "clientUuid",
+			"value": ""
+		},
+		{
+			"key": "readingUuid",
+			"value": ""
+		}
+	]
+}
